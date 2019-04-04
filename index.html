@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>via designer automation</title>
+        <style>
+            .goodboi {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .goodboi img {
+                margin-top: 100px;
+                width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="goodboi">
+            <img src="goodboi.jpg" alt="good boi, 13/10" />
+        </div>
+        <script>
+            (function(apiKey) {
+                (function(p,e,n,d,o) {
+                    var v,w,x,y,z; o=p[d]=p[d]||{}; o._q=[];
+                    v=['initialize','identify','updateOptions','pageLoad']; for(w=0,x=v.length;w<x;++w)(function(m) {
+                        o[m]=o[m]||function() {o._q[m===v[0]? 'unshift':'push']([m].concat([].slice.call(arguments,0)));};
+                    })(v[w]);
+                    y=e.createElement(n); y.async=!0; y.src='https://pendo-test-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+                    z=e.getElementsByTagName(n)[0]; z.parentNode.insertBefore(y,z);
+                })(window,document,'script','pendo');
+
+                // Call this whenever information about your visitors becomes available
+                // Please use Strings, Numbers, or Bools for value types.
+                pendo.initialize({
+                    visitor: {
+                        id: 'VISITOR-UNIQUE-ID'   // Required if user is logged in
+                        // email:        // Optional
+                        // role:         // Optional
+
+                        // You can add any additional visitor level key-values here,
+                        // as long as it's not one of the above reserved names.
+                    },
+
+                    account: {
+                        id: 'ACCOUNT-UNIQUE-ID' // Highly recommended
+                        // name:         // Optional
+                        // planLevel:    // Optional
+                        // planPrice:    // Optional
+                        // creationDate: // Optional
+
+                        // You can add any additional account level key-values here,
+                        // as long as it's not one of the above reserved names.
+                    }
+                });
+            })('970f79f5-da56-44f4-46cd-341afb6d0e85');
+        </script>
+    </body>
+</html>
